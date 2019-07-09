@@ -10,12 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class BestWaifuPollService {
 
-  constructor() {
+  constructor(
+    private afs: AngularFirestore
+  ) {
   }
 
   getImages2() {
     // return this.db.list('/', ref => ref.limitToLast(2));
-    // return this.afs.firestore.collection('bestwaifupool').get();
+    // this.afs.collection('waifus').get();
+    const res = this.afs.firestore.collection('waifus').get();
+    this.afs.firestore.disableNetwork();
+    return res;
   }
 
   getImages() {

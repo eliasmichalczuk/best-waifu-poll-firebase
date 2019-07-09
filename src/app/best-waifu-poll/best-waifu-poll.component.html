@@ -1,5 +1,13 @@
 <div style="text-align: center">
-  <h3>Choose the best waifu!</h3>
-  <img src="{{images[0].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[0].name, images[1].name)">
-  <img src="{{images[1].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[1].name, images[0].name)">
+  <div id="selection" *ngIf="!userFinishedVoting; else viewResults">
+    <h3>Choose the best waifu!</h3>
+    <img src="{{images[0].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[0].nome, images[1].nome)">
+    <img src="{{images[1].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[1].nome, images[0].nome)">
+  </div>
+  <ng-template #viewResults>
+    <h3>Check your votes and the public choice!</h3>
+    <div>
+
+    </div>
+  </ng-template>
 </div>
