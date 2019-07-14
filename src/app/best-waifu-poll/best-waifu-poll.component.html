@@ -1,13 +1,38 @@
 <div style="text-align: center">
-  <div id="selection" *ngIf="!userFinishedVoting; else viewResults">
-    <h3>Choose the best waifu!</h3>
-    <img src="{{images[0].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[0].nome, images[1].nome)">
-    <img src="{{images[1].url}}" alt="" style="max-width: 250px" (click)="selectWaifu(images[1].nome, images[0].nome)">
-  </div>
-  <ng-template #viewResults>
-    <h3>Check your votes and the public choice!</h3>
-    <div>
 
+
+  <div id="selection" >
+    <div *ngIf="!userFinishedVoting">
+      <h3>Choose the best waifu!</h3>
+      <h4>Made with Angular Elements, Animations and Firebase Cloud Firestore</h4>
+      <h5>@eliasmichalczuk</h5>
     </div>
-  </ng-template>
+
+    <div *ngIf="userFinishedVoting">
+      <h3>Check your votes and the public choice!</h3>
+      <div *ngFor="let waifu of resultsOnlyObservable">
+        <div>
+          <span>Waifu -> </span> 
+          {{waifu.nome}}
+          <span> - Votes -> </span> 
+          {{waifu.votes}}
+        </div>
+      </div>
+    </div>
+
+    
+
+      <img
+        [@rollLeftImageWhenUserVoted]="userFinishedVoting ? 'voted-to-left' : 'voting'" 
+        src="{{images[0].url}}" alt=""
+        style="max-width: 250px"
+        (click)="selectWaifu(images[0].nome, images[1].nome)">
+      <img
+        [@rollLeftImageWhenUserVoted]="userFinishedVoting ? 'voted-to-right' : 'voting'"
+        src="{{images[1].url}}" alt=""
+        style="max-width: 250px; padding-left: 25px;"
+        (click)="selectWaifu(images[1].nome, images[0].nome)">
+  </div>
+
 </div>
+      <!-- [@rollLeftImageWhenUserVoted]="userFinishedVoting ? 'voted' : 'voting'" -->

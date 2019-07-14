@@ -5,7 +5,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BestWaifuPollComponent } from './best-waifu-poll/best-waifu-poll.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -18,7 +18,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'angularfs'),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   entryComponents: [
     BestWaifuPollComponent
