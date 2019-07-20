@@ -8,7 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:elements": "ng build --prod --output-hashing none && node build-script.js"
+    "test:ci": "ng test --browsers ChromeHeadless --watch=false",
+    "build:elements": "ng build --prod --output-hashing none && node build-script.js",
+    "tcw": "ng test --code-coverage --watch",
+    "protractor": "protractor ./e2e/protractor.conf.js",
+    "se2e": "ng serv --configuration=e2eenv"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +28,7 @@
     "@angular/router": "~8.1.0",
     "@webcomponents/custom-elements": "^1.2.4",
     "firebase": "^6.2.4",
+    "karma-parallel": "^0.3.1",
     "ngx-spinner": "^8.0.1",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
