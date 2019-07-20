@@ -19,7 +19,7 @@ cache:
 
 script:
   - yarn run test:ci
-  - ng build --prod
+  - npm run build:elements
 
 
 deploy:
