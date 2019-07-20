@@ -63,7 +63,7 @@ export class BestWaifuPollComponent implements OnInit {
     }
   }
 
-  getNewWaifu(bestWaifuIndex: number, worstWaifuIndex: number) {
+  getNewWaifu(bestWaifuIndex: number, worstWaifuIndex: number): Waifu {
     let newWaifu;
     if (bestWaifuIndex > worstWaifuIndex) {
       newWaifu = this.allImages[bestWaifuIndex + 1];

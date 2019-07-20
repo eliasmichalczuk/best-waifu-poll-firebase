@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:elements": "ng build --prod --output-hashing none && node build-script.js"
+    "build:elements": "ng build --prod --output-hashing none && node build-script.js",
+    "tcw": "ng test --code-coverage --watch",
+    "protractor": "protractor ./e2e/protractor.conf.js",
+    "se2e": "ng serv --configuration=e2eenv"
   },
   "private": true,
   "dependencies": {
