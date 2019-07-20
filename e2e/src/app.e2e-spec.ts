@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('deve mostrar duas imagens, clicar duas vezes, aguardar resultados e mostrar em tela', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ngElements!');
+    expect(page.getImages().count).toEqual('2');
   });
 
   afterEach(async () => {

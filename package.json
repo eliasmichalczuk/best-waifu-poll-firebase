@@ -12,7 +12,7 @@
     "build:elements": "ng build --prod --output-hashing none && node build-script.js",
     "tcw": "ng test --code-coverage --watch",
     "protractor": "protractor ./e2e/protractor.conf.js",
-    "se2e": "ng serv --configuration=e2eenv"
+    "se2e": "ng serve --configuration=e2e"
   },
   "private": true,
   "dependencies": {
