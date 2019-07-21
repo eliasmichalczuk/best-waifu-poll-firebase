@@ -8,9 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('deve mostrar duas imagens, clicar duas vezes, aguardar resultados e mostrar em tela', () => {
-    page.navigateTo();
-    expect(page.getImages().count).toEqual('2');
+  it('texto em tela deve conter hi', async () => {
+    browser.waitForAngularEnabled(false);
+    await page.navigateTo();
+    expect(await page.hiTextt().getText()).toContain('hi');
   });
 
   afterEach(async () => {

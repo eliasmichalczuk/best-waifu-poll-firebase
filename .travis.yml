@@ -19,8 +19,10 @@ cache:
 
 script:
   - yarn run test:ci
-  - npm run build:elements
-
+  - yarn run build:elements
+  - yarn run webdriver-update
+  - yarn run webdriver-start
+  - yarn run ci-e2e
 
 deploy:
   provider: pages
