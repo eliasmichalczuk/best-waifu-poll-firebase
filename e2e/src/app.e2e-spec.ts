@@ -8,9 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ngElements!');
+  it('texto em tela deve conter hi', async () => {
+    browser.waitForAngularEnabled(false);
+    await page.navigateTo();
+    expect(await page.hiTextt().getText()).toContain('hi');
   });
 
   afterEach(async () => {
