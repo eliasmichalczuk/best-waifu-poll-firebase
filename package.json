@@ -14,8 +14,8 @@
     "se2e": "ng serve --configuration=e2e",
     "webdriver-start": "webdriver-manager start &",
     "webdriver-update": "webdriver-manager update",
-    "protractor": "protractor",
-    "ci-e2e": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox ./e2e/protractor.conf.js"
+    "ci": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox ./e2e/protractor.conf.js",
+    "ci-e2e": "ng e2e --protractor-config=./e2e/protractor.conf.js"
   },
   "private": true,
   "dependencies": {

@@ -21,7 +21,6 @@ script:
   - yarn run test:ci
   - yarn run webdriver-update
   - yarn run webdriver-start
-  - yarn run se2e
   - yarn run ci-e2e
   - yarn run build:elements
 
